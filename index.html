@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Thủ Thành KHTN 8</title>
+    <style>
+*,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}
+html{line-height:1.5;-webkit-text-size-adjust:100%}
+h1,h2,p{margin:0}
+h1,h2{font-size:inherit;font-weight:inherit}
+button{font-family:inherit;font-size:100%;line-height:inherit;color:inherit;margin:0;padding:0;background:transparent;cursor:pointer}
+svg{display:block;vertical-align:middle}
+.absolute{position:absolute}
+.relative{position:relative}
+.inline-block{display:inline-block}
+.flex{display:flex}
+.hidden{display:none}
+.inset-0{top:0;right:0;bottom:0;left:0}
+.left-0{left:0}
+.top-1\/3{top:33.333333%}
+.-top-20{top:-5rem}
+.-left-20{left:-5rem}
+.-right-20{right:-5rem}
+.-bottom-20{bottom:-5rem}
+.z-10{z-index:10}
+.z-40{z-index:40}
+.z-50{z-index:50}
+.flex-1{flex:1 1 0%}
+.flex-col{flex-direction:column}
+.shrink-0{flex-shrink:0}
+.items-center{align-items:center}
+.justify-between{justify-content:space-between}
+.justify-center{justify-content:center}
+.gap-1{gap:.25rem}
+.gap-3{gap:.75rem}
+.overflow-hidden{overflow:hidden}
+.overflow-y-auto{overflow-y:auto}
+.pointer-events-none{pointer-events:none}
+.w-full{width:100%}
+.w-6{width:1.5rem}
+.w-40{width:10rem}
+.h-full{height:100%}
+.h-1{height:.25rem}
+.h-1\.5{height:.375rem}
+.h-6{height:1.5rem}
+.h-40{height:10rem}
+.max-w-sm{max-width:24rem}
+.max-h-\[90vh\]{max-height:90vh}
+.p-2{padding:.5rem}
+.p-3{padding:.75rem}
+.p-4{padding:1rem}
+.p-6{padding:1.5rem}
+.p-8{padding:2rem}
+.px-2{padding-left:.5rem;padding-right:.5rem}
+.px-4{padding-left:1rem;padding-right:1rem}
+.px-6{padding-left:1.5rem;padding-right:1.5rem}
+.py-1{padding-top:.25rem;padding-bottom:.25rem}
+.py-2{padding-top:.5rem;padding-bottom:.5rem}
+.py-4{padding-top:1rem;padding-bottom:1rem}
+.pb-2{padding-bottom:.5rem}
+.pt-4{padding-top:1rem}
+.mb-1{margin-bottom:.25rem}
+.mb-2{margin-bottom:.5rem}
+.mb-4{margin-bottom:1rem}
+.mb-8{margin-bottom:2rem}
+.mt-1{margin-top:.25rem}
+.mt-4{margin-top:1rem}
+.mr-3{margin-right:.75rem}
+.font-\[\'JetBrains_Mono\'\]{font-family:'JetBrains Mono',monospace}
+.text-xs{font-size:.75rem;line-height:1rem}
+.text-sm{font-size:.875rem;line-height:1.25rem}
+.text-lg{font-size:1.125rem;line-height:1.75rem}
+.text-2xl{font-size:1.5rem;line-height:2rem}
+.text-3xl{font-size:1.875rem;line-height:2.25rem}
+.text-6xl{font-size:3.75rem;line-height:1}
+.text-\[10px\]{font-size:10px}
+.font-medium{font-weight:500}
+.font-bold{font-weight:700}
+.font-black{font-weight:900}
+.leading-relaxed{line-height:1.625}
+.tracking-wider{letter-spacing:.05em}
+.tracking-widest{letter-spacing:.1em}
+.uppercase{text-transform:uppercase}
+.text-left{text-align:left}
+.text-center{text-align:center}
+.text-right{text-align:right}
+.text-white{color:#fff}
+.text-slate-200{color:#e2e8f0}
+.text-slate-300{color:#cbd5e1}
+.text-slate-400{color:#94a3b8}
+.text-slate-500{color:#64748b}
+.text-sky-300{color:#7dd3fc}
+.text-sky-400{color:#38bdf8}
+.text-emerald-400{color:#34d399}
+.text-rose-400{color:#fb7185}
+.text-rose-500{color:#f43f5e}
+.bg-emerald-400{background-color:#34d399}
+.bg-rose-500{background-color:#f43f5e}
+.bg-sky-400{background-color:#38bdf8}
+.bg-slate-800{background-color:#1e293b}
+.bg-slate-900{background-color:#0f172a}
+.bg-indigo-500\/20{background-color:rgba(99,102,241,0.2)}
+.bg-rose-500\/20{background-color:rgba(244,63,94,0.2)}
+.bg-sky-500\/20{background-color:rgba(14,165,233,0.2)}
+.bg-slate-900\/90{background-color:rgba(15,23,42,0.9)}
+.bg-slate-950\/80{background-color:rgba(2,6,23,0.8)}
+.bg-slate-950\/90{background-color:rgba(2,6,23,0.9)}
+.bg-gradient-to-r{background-image:linear-gradient(to right,#0ea5e9,#4f46e5)}
+.hover\:from-sky-400:hover{background-image:linear-gradient(to right,#38bdf8,#6366f1)}
+.hover\:bg-slate-700:hover{background-color:#334155}
+.border{border-width:1px}
+.border-2{border-width:2px}
+.border-t{border-top-width:1px}
+.border-rose-500{border-color:#f43f5e}
+.border-sky-500{border-color:#0ea5e9}
+.border-slate-700{border-color:#334155}
+.border-rose-500\/30{border-color:rgba(244,63,94,0.3)}
+.border-sky-500\/50{border-color:rgba(14,165,233,0.5)}
+.rounded{border-radius:.25rem}
+.rounded-lg{border-radius:.5rem}
+.rounded-xl{border-radius:.75rem}
+.rounded-2xl{border-radius:1rem}
+.rounded-3xl{border-radius:1.5rem}
+.rounded-full{border-radius:9999px}
+.shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
+.shadow-\[0_0_15px_rgba\(14\,165\,233\,0\.5\)\]{box-shadow:0 0 15px rgba(14,165,233,0.5)}
+.shadow-\[0_0_20px_rgba\(14\,165\,233\,0\.4\)\]{box-shadow:0 0 20px rgba(14,165,233,0.4)}
+.shadow-\[0_0_30px_rgba\(14\,165\,233\,0\.2\)\]{box-shadow:0 0 30px rgba(14,165,233,0.2)}
+.shadow-\[0_0_50px_rgba\(14\,165\,233\,0\.3\)\]{box-shadow:0 0 50px rgba(14,165,233,0.3)}
+.shadow-\[0_0_50px_rgba\(239\,68\,68\,0\.3\)\]{box-shadow:0 0 50px rgba(239,68,68,0.3)}
+.blur-3xl{filter:blur(64px)}
+.drop-shadow-md{filter:drop-shadow(0 4px 3px rgba(0,0,0,.07)) drop-shadow(0 2px 2px rgba(0,0,0,.06))}
+.backdrop-blur-sm{-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.backdrop-blur-md{-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}
+.active\:scale-95:active{transform:scale(.95)}
+.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}
+.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}
+.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}
+.duration-300{transition-duration:.3s}
+.duration-1000{transition-duration:1s}
+.ease-linear{transition-timing-function:linear}
+.animate-pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}
+.fixed{position:fixed}
+.sticky{position:sticky}
+.top-0{top:0}
+.-z-10{z-index:-10}
+.z-30{z-index:30}
+.mx-auto{margin-left:auto;margin-right:auto}
+.min-h-screen{min-height:100vh}
+.items-start{align-items:flex-start}
+.flex-shrink-0{flex-shrink:0}
+.gap-2{gap:.5rem}
+.gap-8{gap:2rem}
+.h-5{height:1.25rem}
+.w-5{width:1.25rem}
+.h-auto{height:auto}
+.max-w-md{max-width:28rem}
+.max-w-lg{max-width:32rem}
+.max-w-4xl{max-width:56rem}
+.py-3{padding-top:.75rem;padding-bottom:.75rem}
+.p-5{padding:1.25rem}
+.px-5{padding-left:1.25rem;padding-right:1.25rem}
+.pb-5{padding-bottom:1.25rem}
+.pb-10{padding-bottom:2.5rem}
+.text-xl{font-size:1.25rem;line-height:1.75rem}
+.italic{font-style:italic}
+.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+.cursor-pointer{cursor:pointer}
+.cursor-default{cursor:default}
+.text-red-500{color:#ef4444}
+.text-slate-600{color:#475569}
+.text-emerald-500\/70{color:rgba(16,185,129,0.7)}
+.bg-red-500{background-color:#ef4444}
+.bg-black\/95{background-color:rgba(0,0,0,.95)}
+.bg-emerald-900\/30{background-color:rgba(6,78,59,0.3)}
+.bg-sky-500\/5{background-color:rgba(14,165,233,0.05)}
+.bg-slate-800\/50{background-color:rgba(30,41,59,0.5)}
+.bg-slate-800\/80{background-color:rgba(30,41,59,0.8)}
+.bg-slate-900\/50{background-color:rgba(15,23,42,0.5)}
+.border-b{border-bottom-width:1px}
+.border-emerald-500{border-color:#10b981}
+.border-emerald-500\/50{border-color:rgba(16,185,129,0.5)}
+.border-red-500{border-color:#ef4444}
+.border-sky-500\/30{border-color:rgba(14,165,233,0.3)}
+.border-slate-800{border-color:#1e293b}
+.hover\:text-white:hover{color:#fff}
+.hover\:from-sky-500:hover{background-image:linear-gradient(to right,#0ea5e9,#6366f1)}
+.hover\:to-indigo-500:hover{background-image:linear-gradient(to right,#0ea5e9,#6366f1)}
+.drop-shadow-2xl{filter:drop-shadow(0 25px 25px rgba(0,0,0,.15))}
+.backdrop-blur-lg{-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.shadow-\[0_0_40px_rgba\(14\,165\,233\,0\.15\)\]{box-shadow:0 0 40px rgba(14,165,233,0.15)}
+.shadow-\[0_0_40px_rgba\(16\,185\,129\,0\.3\)\]{box-shadow:0 0 40px rgba(16,185,129,0.3)}
+.shadow-\[0_0_40px_rgba\(239\,68\,68\,0\.3\)\]{box-shadow:0 0 40px rgba(239,68,68,0.3)}
+.active\:scale-\[0\.98\]:active{transform:scale(.98)}
+.transition-colors{transition-property:color,background-color,border-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}
+.duration-200{transition-duration:.2s}
+.animate-ping{animation:ping 1s cubic-bezier(0,0,.2,1) infinite}
+@media (min-width:1024px){.lg\:flex-row{flex-direction:row}}
+@keyframes pulse{50%{opacity:.5}}
+@keyframes ping{75%,100%{transform:scale(2);opacity:0}}
+</style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
+        
+        :root { color-scheme: dark; }
+        html, body { height: 100%; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617; /* Slate 950 */
+            color: #f8fafc;
+            overflow: hidden;
+            touch-action: none; /* Prevent scrolling on mobile canvas */
+            margin: 0;
+            padding: 0;
+        }
+
+        #game-container {
+            position: relative;
+            width: 100vw;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(to bottom, #020617, #0f172a);
+            box-shadow: 0 0 50px rgba(14, 165, 233, 0.2);
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            flex: 1 1 0%;
+            min-height: 0;
+        }
+
+        /* HUD Styles */
+        .hud-overlay {
+            position: relative;
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            flex-shrink: 0;
+            pointer-events: none; /* Let clicks pass through to canvas */
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            z-index: 10;
+        }
+
+        .hud-box {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 12px;
+            padding: 0.3rem 0.7rem;
+            pointer-events: auto;
+        }
+
+        #health-bar { margin-bottom: 0.25rem; }
+        #health-bar span { font-size: 0.85rem; line-height: 1; }
+        .hud-box .text-2xl { font-size: 1.25rem; line-height: 1.5rem; }
+
+        /* Modal Animations */
+        .modal-enter {
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .option-btn {
+            transition: all 0.2s ease;
+        }
+        .option-btn:active {
+            transform: scale(0.95);
+        }
+
+        .shield-warning {
+            animation: pulseRed 1s infinite;
+        }
+
+        @keyframes pulseRed {
+            0%, 100% { box-shadow: inset 0 0 0 transparent; }
+            50% { box-shadow: inset 0 0 50px rgba(239, 68, 68, 0.5); }
+        }
+    
+        /* ===== MÀN 2 ===== */
+        #level2 {
+            position: fixed; inset: 0; z-index: 60; overflow-y: auto; overflow-x: hidden;
+            touch-action: pan-y; background-color: #020617; color: #f8fafc;
+            background-image: linear-gradient(rgba(14, 165, 233, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(14, 165, 233, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        #level2[hidden] { display: none; }
+        #level2 .hud-font { font-family: 'JetBrains Mono', monospace; }
+        #level2 .ship-part { transition: all 0.3s ease; cursor: pointer; stroke-width: 3; stroke-linejoin: round; }
+        #level2 .ship-part:hover:not(.repaired) { filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.8)); transform: scale(1.02); transform-origin: center; }
+        #level2 .broken { fill: rgba(239, 68, 68, 0.15); stroke: #ef4444; animation: pulse-red 2s infinite; }
+        #level2 .repairing { fill: rgba(245, 158, 11, 0.2); stroke: #f59e0b; }
+        #level2 .tier-orange { fill: rgba(249, 115, 22, 0.2); stroke: #f97316; --c: #f97316; }
+        #level2 .tier-yellow { fill: rgba(234, 179, 8, 0.22); stroke: #eab308; --c: #eab308; }
+        #level2 .tier-green { fill: rgba(16, 185, 129, 0.3); stroke: #10b981; --c: #10b981; filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.35)); }
+        #level2 .repaired { fill: rgba(16, 185, 129, 0.3); stroke: #10b981; cursor: default; filter: drop-shadow(0 0 15px rgba(16, 185, 129, 0.4)); }
+        @keyframes pulse-red { 0%, 100% { stroke-opacity: 1; fill-opacity: 0.15; } 50% { stroke-opacity: 0.5; fill-opacity: 0.05; } }
+        .damage-shake { animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both; }
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-3px, 0, 0); }
+            20%, 80% { transform: translate3d(5px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-8px, 0, 0); }
+            40%, 60% { transform: translate3d(8px, 0, 0); }
+        }
+        #level2 .broken { --c: #ef4444; }
+        #level2 .repairing { --c: #f59e0b; }
+        #level2 .repaired { --c: #10b981; }
+        #level2 .d-line { fill: none; stroke: var(--c); stroke-width: 1.5; stroke-opacity: 0.8; }
+        #level2 .d-panel { fill: none; stroke: #cbd5e1; stroke-opacity: 0.35; stroke-width: 1; }
+        #level2 .d-fill { fill: var(--c); fill-opacity: 0.4; stroke: none; }
+        #level2 .d-sheen { fill: #fff; fill-opacity: 0.07; stroke: none; }
+        #level2 .glass { fill: url(#l2-glass); stroke: var(--c); stroke-width: 1.5; fill-opacity: 1; transition: opacity 0.3s ease; }
+        #level2 .broken .glass { opacity: 0.4; }
+        #level2 .repairing .glass { opacity: 0.7; }
+        #level2 .tier-orange .glass { opacity: 0.6; }
+        #level2 .tier-yellow .glass { opacity: 0.8; }
+        #level2 .tier-green .glass { opacity: 1; }
+        #level2 .glint { fill: #fff; fill-opacity: 0.55; stroke: none; }
+        #level2 .ship-part text { fill: #e2e8f0; fill-opacity: 1; }
+        /* ===== Nút bỏ qua màn + hộp mật khẩu ===== */
+        .skip-btn { margin-top: 0.3rem; padding: 0.2rem 0.55rem; font: 700 10px/1.2 'JetBrains Mono', monospace; letter-spacing: 0.05em; text-transform: uppercase; color: #94a3b8; background: rgba(30, 41, 59, 0.8); border: 1px solid #334155; border-radius: 8px; cursor: pointer; pointer-events: auto; }
+        .skip-btn:hover { color: #fff; border-color: #38bdf8; }
+        .skip-btn:focus-visible, .pw-btn:focus-visible, #pw-input:focus-visible { outline: 2px solid #38bdf8; outline-offset: 2px; }
+        #pw-modal { position: fixed; inset: 0; z-index: 80; display: flex; align-items: center; justify-content: center; padding: 1rem; background: rgba(2, 6, 23, 0.9); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); touch-action: manipulation; }
+        #pw-modal[hidden] { display: none; }
+        .pw-box { width: 100%; max-width: 20rem; padding: 1.5rem; background: #0f172a; border: 1px solid rgba(14, 165, 233, 0.4); border-radius: 1rem; box-shadow: 0 0 40px rgba(14, 165, 233, 0.15); text-align: center; }
+        .pw-title { font-size: 1.125rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
+        .pw-sub { font-size: 0.8rem; color: #94a3b8; margin-bottom: 1rem; }
+        #pw-input { width: 100%; padding: 0.75rem; font: 700 1.5rem/1 'JetBrains Mono', monospace; letter-spacing: 0.4em; text-align: center; color: #fff; background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; }
+        #pw-input.pw-bad { border-color: #ef4444; }
+        .pw-msg { min-height: 1.25rem; margin: 0.5rem 0 0.75rem; font-size: 0.8rem; color: #fb7185; }
+        .pw-row { display: flex; gap: 0.75rem; }
+        .pw-btn { flex: 1; padding: 0.75rem; font-weight: 700; color: #e2e8f0; background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; cursor: pointer; }
+        .pw-btn.pw-ok { color: #fff; border: 0; background: linear-gradient(to right, #0ea5e9, #4f46e5); }
+        /* ===== Bảng thành tích ===== */
+        .l2-stats { position: relative; z-index: 10; margin: 0 0 1.25rem; padding: 0.75rem 1rem; text-align: left; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 0.75rem; }
+        .l2-stats[hidden] { display: none; }
+        .l2-stat-row { display: flex; justify-content: space-between; align-items: baseline; padding: 0.15rem 0; font-size: 0.85rem; color: #94a3b8; }
+        .l2-stat-row b { font: 700 0.95rem/1.4 'JetBrains Mono', monospace; color: #e2e8f0; }
+        .l2-stat-row b.skipped { font-family: Inter, sans-serif; font-size: 0.8rem; color: #64748b; }
+        .l2-stat-total { margin-top: 0.4rem; padding-top: 0.5rem; border-top: 1px solid #334155; color: #fff; font-size: 0.95rem; }
+        .l2-stat-total b { font-size: 1.6rem; color: #34d399; }
+        .l2-record { margin-top: 0.5rem; font-size: 0.8rem; text-align: center; color: #94a3b8; }
+        .l2-record.is-new { font-weight: 700; color: #facc15; }
+        #level2 header { padding-top: max(1rem, env(safe-area-inset-top, 0px)); }
+    </style>
+</head>
+<body>
+
+
+
+
+    <div id="game-container">
+        <!-- Canvas for Game Rendering -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Heads Up Display (HUD) -->
+        <div class="hud-overlay">
+            <div class="hud-box">
+                <div class="text-xs text-sky-400 font-bold uppercase tracking-widest mb-1">Căn Cứ (HP)</div>
+                <div class="flex gap-1 mb-2" id="health-bar">
+                    <!-- Hearts will be injected here -->
+                </div>
+                <div class="text-[10px] text-emerald-400 font-bold uppercase tracking-widest flex justify-between">
+                    <span>Năng lượng Khiên</span>
+                    <span id="shield-display">0%</span>
+                </div>
+                <div class="w-full bg-slate-800 h-1 mt-1 rounded-full overflow-hidden">
+                    <div id="shield-bar" class="bg-emerald-400 h-full transition-all duration-300" style="width: 0%;"></div>
+                </div>
+            </div>
+            <div class="hud-box text-right">
+                <div class="text-xs text-sky-400 font-bold uppercase tracking-widest mb-1">Đã diệt</div>
+                <div class="text-2xl font-black font-['JetBrains_Mono'] text-white">
+                    <span id="score-display">0</span><span class="text-slate-500 text-sm">/28</span>
+                </div>
+                <button type="button" class="skip-btn" onclick="openSkip(1)">Bỏ qua màn 🔒</button>
+            </div>
+        </div>
+
+        <!-- Instructional Overlay (Fades out) -->
+        <div id="instruction" class="absolute top-1/3 left-0 w-full text-center pointer-events-none transition-opacity duration-1000 z-10">
+            <div class="inline-block bg-slate-900/90 text-sky-300 px-4 py-2 rounded-full border border-sky-500/50 shadow-[0_0_15px_rgba(14,165,233,0.5)] animate-pulse">
+                Chạm vào thiên thạch để bắn!
+            </div>
+        </div>
+
+        <!-- Question Modal -->
+        <div id="modal-question" class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm z-40 hidden flex-col items-center justify-center p-4">
+            <div class="bg-slate-900 border border-sky-500/50 rounded-2xl p-6 w-full max-w-sm shadow-[0_0_30px_rgba(14,165,233,0.2)] modal-enter flex flex-col max-h-[90vh]">
+                <div class="flex items-center gap-3 mb-4 shrink-0">
+                    <div class="bg-rose-500/20 p-2 rounded-lg text-rose-400 border border-rose-500/30">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <div class="flex-1">
+                        <h2 class="text-sm font-bold text-slate-400 uppercase tracking-wider">Mục tiêu khóa</h2>
+                        <div class="text-lg font-bold text-white">Trả lời để khai hỏa!</div>
+                    </div>
+                </div>
+                
+                <!-- Timer Bar -->
+                <div class="w-full mb-4 shrink-0">
+                    <div class="flex justify-between text-xs font-bold mb-1">
+                        <span class="text-slate-400">Thời gian</span>
+                        <span id="timer-text" class="text-sky-400">15s</span>
+                    </div>
+                    <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                        <div id="modal-timer-bar" class="bg-sky-400 h-full transition-all duration-1000 ease-linear" style="width: 100%;"></div>
+                    </div>
+                </div>
+                
+                <div class="overflow-y-auto mb-4 shrink-0">
+                    <p id="q-text" class="text-slate-200 text-lg leading-relaxed font-medium">Question text?</p>
+                </div>
+                
+                <div id="q-options" class="flex flex-col gap-3 overflow-y-auto pb-2">
+                    <!-- Options injected by JS -->
+                </div>
+                
+                <div class="mt-4 pt-4 border-t border-slate-700 text-xs text-center text-rose-400 font-medium shrink-0">
+                    ⚠️ Hết giờ hoặc sai làm thiên thạch rơi nhanh & giảm giờ ở lần sau còn 10s! <br/>
+                    <span class="text-emerald-400">Dư 4s = +1% Khiên (5% khiên đỡ 1 đòn)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- End Game Modal -->
+        <div id="modal-end" class="absolute inset-0 bg-slate-950/90 backdrop-blur-md z-50 hidden flex-col items-center justify-center p-4 text-center">
+            <div class="bg-slate-900 border-2 rounded-3xl p-8 w-full max-w-sm shadow-2xl modal-enter relative overflow-hidden" id="end-box">
+                <!-- Decorative background elements -->
+                <div class="absolute -top-20 -right-20 w-40 h-40 bg-sky-500/20 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-20 -left-20 w-40 h-40 bg-indigo-500/20 rounded-full blur-3xl"></div>
+                
+                <div id="end-icon" class="text-6xl mb-4 relative z-10">🏆</div>
+                <h1 id="end-title" class="text-3xl font-black mb-2 text-white relative z-10">Chiến Thắng!</h1>
+                <p id="end-desc" class="text-slate-300 mb-8 relative z-10">Căn cứ đã an toàn!</p>
+                
+                <button id="btn-next-level" onclick="startLevel2()" class="hidden relative z-10 w-full mb-4 bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-bold py-4 px-6 rounded-xl text-lg shadow-[0_0_20px_rgba(14,165,233,0.4)] transition-transform active:scale-95">
+                    Sang màn 2 ➜
+                </button>
+                <button id="btn-retry-l1" onclick="initGame()" class="relative z-10 w-full bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-bold py-4 px-6 rounded-xl text-lg shadow-[0_0_20px_rgba(14,165,233,0.4)] transition-transform active:scale-95">
+                    Bảo vệ lần nữa
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===== MÀN 2: Trạm sửa chữa ===== -->
+    <div id="level2" hidden>
+    <div class="min-h-screen flex flex-col relative pb-10">
+
+
+    <!-- Header / HUD -->
+    <header class="p-4 flex justify-between items-start bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-30">
+        <div>
+            <div class="text-xs text-slate-400 font-bold uppercase tracking-widest mb-1">Năng lượng tàu (HP)</div>
+            <div class="text-2xl filter drop-shadow-md tracking-widest" id="l2-lives-display">❤️❤️❤️❤️❤️</div>
+        </div>
+        <div class="text-right">
+            <div class="text-xs text-slate-400 font-bold uppercase tracking-widest mb-1">Màn 2 · Tiến độ chung</div>
+            <div class="text-2xl font-black hud-font text-sky-400">
+                <span id="l2-global-progress">0</span><span class="text-slate-600 text-sm">/50</span>
+            </div>
+                <button type="button" class="skip-btn" onclick="openSkip(2)">Bỏ qua màn 🔒</button>
+        </div>
+    </header>
+
+    <main class="flex-1 w-full max-w-4xl mx-auto p-4 flex flex-col lg:flex-row gap-8 items-center justify-center mt-4">
+        
+        <!-- SVG Spaceship Blueprint -->
+        <div class="w-full max-w-md relative flex-shrink-0" id="l2-ship-container">
+            <div class="absolute inset-0 bg-sky-500/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+            
+            <svg viewBox="0 0 400 450" class="w-full h-auto drop-shadow-2xl" role="img" aria-label="Bản vẽ phi thuyền">
+                <defs>
+                    <linearGradient id="l2-glass" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#bae6fd"/>
+                        <stop offset="1" stop-color="#0369a1"/>
+                    </linearGradient>
+                </defs>
+
+                <!-- Cánh (Wings): cánh xuôi, pháo ở mũi cánh, động cơ phụ -->
+                <g id="part-wings" class="ship-part broken" onclick="level2.selectPart('wings')">
+                    <path d="M 162 216 L 66 288 L 50 298 L 50 340 L 68 346 L 158 322 Z" />
+                    <path d="M 238 216 L 334 288 L 350 298 L 350 340 L 332 346 L 242 322 Z" />
+                    <path class="d-panel" d="M 158 240 L 84 296 M 158 268 L 92 318" />
+                    <path class="d-panel" d="M 242 240 L 316 296 M 242 268 L 308 318" />
+                    <rect x="116" y="292" width="24" height="20" rx="3" class="d-panel" />
+                    <rect x="260" y="292" width="24" height="20" rx="3" class="d-panel" />
+                    <path class="d-line" d="M 120 312 L 136 312 M 264 312 L 280 312" />
+                    <rect x="44" y="268" width="7" height="64" rx="2" />
+                    <rect x="349" y="268" width="7" height="64" rx="2" />
+                    <circle cx="47.5" cy="265" r="3.5" class="d-fill" />
+                    <circle cx="352.5" cy="265" r="3.5" class="d-fill" />
+                    <circle cx="58" cy="336" r="3" class="d-fill animate-pulse" />
+                    <circle cx="342" cy="336" r="3" class="d-fill animate-pulse" />
+                    <text x="74" y="322" class="hud-font text-xs" fill="currentColor" stroke="none">WINGS</text>
+                </g>
+
+                <!-- Khoang điều khiển (Cockpit): mũi tàu và kính lái -->
+                <g id="part-cockpit" class="ship-part broken" onclick="level2.selectPart('cockpit')">
+                    <path d="M 200 100 C 214 118 232 160 238 204 L 162 204 C 168 160 186 118 200 100 Z" />
+                    <ellipse cx="200" cy="148" rx="13" ry="28" class="glass" />
+                    <ellipse cx="195" cy="136" rx="3.5" ry="12" class="glint" />
+                    <path class="d-line" d="M 172 178 Q 200 187 228 178" />
+                    <path class="d-panel" d="M 186 112 L 186 128 M 214 112 L 214 128" />
+                    <text x="200" y="198" text-anchor="middle" class="hud-font text-[10px]" fill="currentColor" stroke="none">COCKPIT</text>
+                </g>
+
+                <!-- Kho lương thực & hàng hóa (Storage) -->
+                <g id="part-storage" class="ship-part broken" onclick="level2.selectPart('storage')">
+                    <polygon points="162,204 238,204 246,322 154,322" />
+                    <rect x="176" y="220" width="48" height="66" rx="3" class="d-panel" />
+                    <line x1="166" y1="244" x2="234" y2="244" stroke-width="1" stroke-dasharray="4,4"/>
+                    <line x1="164" y1="288" x2="236" y2="288" stroke-width="1" stroke-dasharray="4,4"/>
+                    <rect x="180" y="296" width="14" height="14" class="d-fill" />
+                    <rect x="198" y="296" width="22" height="14" class="d-fill" />
+                    <rect x="170" y="206" width="9" height="112" class="d-sheen" />
+                    <circle cx="168" cy="212" r="1.8" class="d-fill" />
+                    <circle cx="232" cy="212" r="1.8" class="d-fill" />
+                    <circle cx="164" cy="314" r="1.8" class="d-fill" />
+                    <circle cx="236" cy="314" r="1.8" class="d-fill" />
+                    <text x="200" y="268" text-anchor="middle" class="hud-font text-xs" fill="currentColor" stroke="none">STORAGE</text>
+                </g>
+
+                <!-- Động cơ (Engine): hai ống phụt và ngọn lửa -->
+                <g id="part-engine" class="ship-part broken" onclick="level2.selectPart('engine')">
+                    <polygon points="158,322 242,322 234,372 166,372" />
+                    <path class="d-line" d="M 170 332 L 230 332 M 172 340 L 228 340" />
+                    <polygon points="170,372 196,372 192,388 174,388" />
+                    <polygon points="204,372 230,372 226,388 208,388" />
+                    <polygon points="176,388 190,388 183,428" class="d-fill animate-pulse" />
+                    <polygon points="210,388 224,388 217,428" class="d-fill animate-pulse" />
+                    <text x="200" y="360" text-anchor="middle" class="hud-font text-[10px]" fill="currentColor" stroke="none">ENGINE</text>
+                </g>
+
+                <!-- Ra đa (Radar): cột ăng-ten và đĩa thu sóng -->
+                <g id="part-radar" class="ship-part broken" onclick="level2.selectPart('radar')">
+                    <line x1="200" y1="102" x2="200" y2="62" />
+                    <path d="M 166 64 Q 200 24 234 64" fill="none" />
+                    <path class="d-line" d="M 186 98 L 200 78 L 214 98" fill="none" />
+                    <path class="d-line" d="M 180 44 Q 200 18 220 44" fill="none" />
+                    <circle cx="200" cy="62" r="5" />
+                    <circle cx="200" cy="42" r="2" fill="currentColor" stroke="none" class="animate-ping"/>
+                    <text x="214" y="86" class="hud-font text-[10px]" fill="currentColor" stroke="none">RADAR</text>
+                </g>
+            </svg>
+        </div>
+
+        <!-- Bảng trạng thái sửa chữa -->
+        <div class="w-full max-w-sm flex flex-col gap-3">
+            <div class="text-sm text-sky-400 font-bold uppercase tracking-widest mb-2 flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                Hệ thống phi thuyền
+            </div>
+            
+            <div id="l2-panel-parts" class="flex flex-col gap-2">
+                <!-- Được tạo bằng JS -->
+            </div>
+            
+            <div class="mt-4 text-xs text-slate-500 italic bg-slate-900/50 p-3 rounded-lg border border-slate-800">
+                Chạm vào các bộ phận trên bản vẽ hoặc danh sách để tiến hành sửa chữa. Trả lời đúng để khôi phục 10% tiến độ mỗi câu.
+            </div>
+        </div>
+    </main>
+
+    <!-- Question Modal -->
+    <div id="l2-modal-question" class="fixed inset-0 bg-slate-950/90 backdrop-blur-sm z-50 hidden flex-col items-center justify-center p-4">
+        <div class="bg-slate-900 border border-sky-500/30 rounded-2xl w-full max-w-lg shadow-[0_0_40px_rgba(14,165,233,0.15)] modal-enter flex flex-col max-h-[90vh] overflow-hidden">
+            
+            <div class="p-5 border-b border-slate-800 flex items-center gap-3 bg-slate-800/50 shrink-0">
+                <div class="bg-sky-500/20 p-2 rounded-lg text-sky-400 border border-sky-500/30" id="l2-modal-part-icon">
+                    🔧
+                </div>
+                <div class="flex-1">
+                    <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Đang sửa chữa</h2>
+                    <div class="text-lg font-bold text-white" id="l2-modal-part-name">Tên bộ phận</div>
+                </div>
+                <button onclick="level2.closeModal()" class="text-slate-500 hover:text-white p-2">✕</button>
+            </div>
+            
+            <!-- Modal Timer -->
+            <div class="w-full shrink-0 px-5 pt-4">
+                <div class="flex justify-between text-xs font-bold mb-1">
+                    <span class="text-slate-400">Thời gian xác thực</span>
+                    <span id="l2-modal-timer-text" class="text-sky-400 font-mono">15s</span>
+                </div>
+                <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                    <div id="l2-modal-timer-bar" class="bg-sky-400 h-full transition-all duration-1000 ease-linear" style="width: 100%;"></div>
+                </div>
+            </div>
+            
+            <div class="overflow-y-auto px-5 py-4 shrink-0">
+                <div class="flex items-start gap-3 mb-2">
+                    <span class="bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded font-bold">CÂU HỎI</span>
+                </div>
+                <p id="l2-q-text" class="text-slate-200 text-lg leading-relaxed font-medium">Nội dung câu hỏi?</p>
+            </div>
+            
+            <div id="l2-q-options" class="flex flex-col gap-2 overflow-y-auto px-5 pb-5">
+                <!-- Options injected by JS -->
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- End Game Modal -->
+    <div id="l2-modal-end" class="fixed inset-0 bg-black/95 backdrop-blur-lg z-50 hidden flex-col items-center justify-center p-4 text-center">
+        <div class="bg-slate-900 border-2 rounded-3xl p-8 w-full max-w-sm shadow-2xl modal-enter relative overflow-hidden" id="l2-end-box">
+            <div class="absolute -top-20 -right-20 w-40 h-40 bg-sky-500/20 rounded-full blur-3xl"></div>
+            
+            <div id="l2-end-icon" class="text-6xl mb-4 relative z-10">🚀</div>
+            <h1 id="l2-end-title" class="text-3xl font-black mb-2 text-white relative z-10">Khởi Hành!</h1>
+            <p id="l2-end-desc" class="text-slate-400 mb-8 relative z-10">Phi thuyền đã sẵn sàng tiếp tục hành trình!</p>
+            
+            <div id="l2-stats" class="l2-stats" hidden></div>
+            <div class="flex flex-col gap-3 relative z-10">
+                <button id="l2-btn-retry" onclick="level2.init()" class="w-full bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 text-white font-bold py-4 px-6 rounded-xl text-lg shadow-[0_0_20px_rgba(14,165,233,0.4)] transition-transform active:scale-95">
+                    Chơi lại màn 2
+                </button>
+                <button onclick="backToLevel1()" class="w-full bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-bold py-3 px-6 rounded-xl transition-transform active:scale-95">
+                    Chơi lại từ màn 1
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    </div>
+    </div>
+
+
+    <!-- Hộp nhập mật khẩu bỏ qua màn -->
+    <div id="pw-modal" hidden>
+        <div class="pw-box" id="pw-form">
+            <div class="pw-title">Bỏ qua màn</div>
+            <div class="pw-sub" id="pw-sub">Nhập mật khẩu để tiếp tục</div>
+            <input id="pw-input" type="password" inputmode="numeric" maxlength="12" aria-label="Mật khẩu" autocomplete="new-password" autocapitalize="off" autocorrect="off" spellcheck="false">
+            <div class="pw-msg" id="pw-msg" role="alert"></div>
+            <div class="pw-row">
+                <button type="button" class="pw-btn" onclick="closePw()">Hủy</button>
+                <button type="button" class="pw-btn pw-ok" onclick="submitPw()">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- DATA: 28 Questions ---
+        const questionPool = [
+            { q: "Dụng cụ nào sau đây dùng để đo lường thể tích của dung dịch?", opts: ["Ống đong", "Ống nghiệm", "Lọ đựng hóa chất", "Chén nung"], ans: 0 },
+            { q: "Thiết bị nào sau đây là thiết bị sử dụng điện?", opts: ["Pin", "Cầu chì", "Diode phát quang", "Công tắc"], ans: 2 },
+            { q: "Cầu chì (fuse) được sử dụng để làm gì?", opts: ["Đo dòng điện, điện áp", "Phòng tránh các hiện tượng quá tải gây cháy nổ", "Chuyển đổi điện áp", "Đo cường độ dòng điện"], ans: 1 },
+            { q: "Để xác định mức độ chua của các mẫu nước, thiết bị nào phù hợp nhất?", opts: ["Máy đo pH", "Kẹp gỗ", "Joulemeter", "Huyết áp kế"], ans: 0 },
+            { q: "Để pha 80 mL dung dịch copper(II) sulfate thì sử dụng bình tam giác có thể tích nào hợp lí?", opts: ["1000 mL", "50 mL", "250 mL", "100 mL"], ans: 3 },
+            { q: "Dụng cụ bằng thủy tinh dạng ống, rỗng, có vạch chia độ dùng để đong thể tích lỏng gọi là gì?", opts: ["Ống nghiệm", "Ống hút nhỏ giọt", "Lọ đựng hóa chất", "Ống đong"], ans: 3 },
+            { q: "Khi làm thí nghiệm, hành động nào là đúng?", opts: ["Tự ý lấy hóa chất", "Ngửi trực tiếp hóa chất", "Đọc kĩ hướng dẫn và thực hiện đúng quy định", "Dùng tay trực tiếp lấy hóa chất"], ans: 2 },
+            { q: "Biển cảnh báo có hình ngọn lửa bốc cháy trên vòng tròn cho biết đặc điểm hoá chất là gì?", opts: ["Chất oxi hóa", "Chất dễ cháy", "Chất ăn mòn", "Chất độc"], ans: 1 },
+            { q: "Dụng cụ dùng để lấy hoá chất lỏng với lượng nhỏ (1-2 mL) là?", opts: ["Thìa thủy tinh", "Đũa thủy tinh", "Ống đong 20 mL", "Ống hút nhỏ giọt"], ans: 3 },
+            { q: "Mực chất lỏng trong ống đong nằm dưới vạch 25 một chút. Thể tích có thể là bao nhiêu?", opts: ["25 mL", "24 mL", "26 mL", "23 mL"], ans: 1 },
+            { q: "Mặt ammeter hiển thị kim chỉ ở vạch 1.6, đơn vị trên mặt là mA. Giá trị đo được là?", opts: ["1.8 A", "0.8 A", "1.6 mA", "0.8 mA"], ans: 2 },
+            { q: "Thao tác đúng khi đun nóng ống nghiệm bằng đèn cồn?", opts: ["Đun tập trung tại vị trí hóa chất", "Đun từ phần miệng ống nghiệm dần xuống", "Làm nóng đều đáy rồi đun trực tiếp", "Ngâm nước lạnh ngay sau khi đun"], ans: 2 },
+            { q: "Hiện tượng nào dưới đây là hiện tượng hóa học?", opts: ["Thanh sắt đun nóng, uốn cong", "Thổi khí CO2 vào nước vôi trong, làm nước vẩn đục", "Đá lạnh chảy thành nước", "Nhựa đường nóng chảy"], ans: 1 },
+            { q: "Hiện tượng nào dưới đây là hiện tượng vật lí?", opts: ["Quả táo ngả màu nâu", "Quang hợp của cây", "Sự đông đặc ở mỡ động vật", "Sữa có vị chua"], ans: 2 },
+            { q: "Dấu hiệu chính để phân biệt biến đổi hóa học với biến đổi vật lí là sự:", opts: ["thay đổi trạng thái", "thay đổi hình dạng", "xuất hiện chất mới", "thay đổi màu sắc"], ans: 2 },
+            { q: "Hiện tượng nào là biến đổi hóa học? (1) Hòa tan đường. (2) Hòa tan muối. (3) Sodium vào nước. (4) Đường cháy.", opts: ["1 và 2", "3 và 4", "2 và 4", "1 và 3"], ans: 1 },
+            { q: "Hiện tượng nào là biến đổi vật lí? (1) Băng tan. (2) Nấu cơm quá lửa. (3) Nung đá vôi. (4) Phơi quần áo.", opts: ["1, 2", "1, 3", "1, 4", "2, 3"], ans: 2 },
+            { q: "Nung nóng calcium carbonate thu được calcium oxide và carbon dioxide. Chất đầu là?", opts: ["Không khí", "Calcium oxide", "Carbon dioxide", "Calcium carbonate"], ans: 3 },
+            { q: "Trong phản ứng giữa oxygen với hydrogen tạo thành nước, lượng chất nào tăng lên?", opts: ["Chỉ có nước", "Oxygen và hydrogen", "Oxygen và nước", "Hydrogen và nước"], ans: 0 },
+            { q: "Mối quan hệ giữa số mol (n) và khối lượng (m) là:", opts: ["n = M / m", "m = M / n", "n = m / M", "n = m . M"], ans: 2 },
+            { q: "Số Avogadro và kí hiệu là:", opts: ["10^23, A", "6.022.10^-23, A", "6.022.10^23, N_A", "6.022.10^24, N_A"], ans: 2 },
+            { q: "Điền vào: Trong một phản ứng hóa học, tổng khối lượng của các chất sản phẩm ... tổng khối lượng của các chất phản ứng.", opts: ["lớn hơn", "nhỏ hơn", "bằng", "nhỏ hơn hoặc bằng"], ans: 2 },
+            { q: "Sơ đồ: A + B -> C + D. Phương trình bảo toàn khối lượng là:", opts: ["mA + mC = mB + mD", "mA + mB = mC + mD", "mA + mD = mB + mC", "mA - mB = mC - mD"], ans: 1 },
+            { q: "Hệ số cân bằng hóa học của phương trình 2H2 + O2 -> 2H2O là:", opts: ["1, 2, 1", "2, 1, 1", "2, 2, 1", "2, 1, 2"], ans: 3, timeLimit: 20 },
+            { q: "Cho sơ đồ: Fe3O4 + ?HCl -> 2FeCl3 + FeCl2 + 4H2O. Hệ số của HCl là:", opts: ["8", "6", "5", "4"], ans: 0, timeLimit: 20 },
+            { q: "Để xác định mức độ phản ứng nhanh hay chậm người ta sử dụng khái niệm nào?", opts: ["Tốc độ phản ứng", "Cân bằng hoá học", "Phản ứng một chiều", "Phản ứng thuận nghịch"], ans: 0 },
+            { q: "Tốc độ phản ứng KHÔNG phụ thuộc yếu tố nào sau đây?", opts: ["Thời gian xảy ra phản ứng", "Bề mặt tiếp xúc", "Nồng độ các chất", "Chất xúc tác"], ans: 0 },
+            { q: "Chất xúc tác làm ...(1)... tốc độ phản ứng nhưng ...(2)... trong quá trình phản ứng.", opts: ["(1) thay đổi, (2) không bị tiêu hao", "(1) tăng, (2) không bị tiêu hao", "(1) tăng, (2) không thay đổi", "(1) thay, (2) tiêu hao ít"], ans: 1 }
+        ];
+
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const container = document.getElementById('game-container');
+        
+        // DOM Elements
+        const healthBar = document.getElementById('health-bar');
+        const scoreDisplay = document.getElementById('score-display');
+        const modalQ = document.getElementById('modal-question');
+        const modalEnd = document.getElementById('modal-end');
+        const instruction = document.getElementById('instruction');
+
+        // Game State Variables
+        let w, h;
+        let isGameOver = false;
+        let animationId;
+        
+        const MAX_HP = 5;
+        let hp = MAX_HP;
+        let shield = 0;
+        let score = 0;
+        let pendingQuestions = [];
+        let targetedEnemy = null;
+        let spawnTimer = 0;
+        let spawnRate = 120; // Frames between spawns
+        let questionTimeLeft = 20;
+        let timerInterval = null;
+        let runStart = Date.now();   // lúc bắt đầu màn 1
+        let level1Time = null;       // thời gian hoàn thành màn 1 (giây)
+        let level1Skipped = false;
+
+        // Entities arrays
+        let stars = [];
+        let enemies = [];
+        let lasers = [];
+        let particles = [];
+
+        // Resize Canvas to fit container
+        function resize() {
+            w = canvas.width = canvas.clientWidth;
+            h = canvas.height = canvas.clientHeight;
+        }
+        window.addEventListener('resize', resize);
+        if (window.ResizeObserver) new ResizeObserver(resize).observe(canvas);
+
+        // Utility: Random number
+        const random = (min, max) => Math.random() * (max - min) + min;
+
+        class Star {
+            constructor() {
+                this.x = random(0, w);
+                this.y = random(0, h);
+                this.size = random(0.5, 2);
+                this.speed = random(0.2, 1);
+                this.alpha = random(0.3, 1);
+            }
+            update(timeScale = 1) {
+                this.y += this.speed * timeScale;
+                if (this.y > h) {
+                    this.y = 0;
+                    this.x = random(0, w);
+                }
+            }
+            draw() {
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        class Particle {
+            constructor(x, y, color) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                const angle = random(0, Math.PI * 2);
+                const velocity = random(1, 5);
+                this.vx = Math.cos(angle) * velocity;
+                this.vy = Math.sin(angle) * velocity;
+                this.life = 1;
+                this.decay = random(0.02, 0.05);
+                this.size = random(2, 5);
+            }
+            update(timeScale = 1) {
+                this.x += this.vx * timeScale;
+                this.y += this.vy * timeScale;
+                this.life -= this.decay * timeScale;
+            }
+            draw() {
+                ctx.globalAlpha = Math.max(0, this.life);
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.globalAlpha = 1;
+            }
+        }
+
+        class Laser {
+            constructor(startX, startY, targetX, targetY, targetEnemy) {
+                this.x = startX;
+                this.y = startY;
+                this.targetX = targetX;
+                this.targetY = targetY;
+                this.targetEnemy = targetEnemy;
+                this.speed = 15;
+                
+                const angle = Math.atan2(targetY - startY, targetX - startX);
+                this.vx = Math.cos(angle) * this.speed;
+                this.vy = Math.sin(angle) * this.speed;
+                this.active = true;
+            }
+            update(timeScale = 1) {
+                this.x += this.vx * timeScale;
+                this.y += this.vy * timeScale;
+
+                // Check collision with target
+                const dist = Math.hypot(this.targetX - this.x, this.targetY - this.y);
+                if (dist < this.speed || this.y < this.targetY) {
+                    this.active = false;
+                    // Trigger explosion
+                    createExplosion(this.targetX, this.targetY, '#38bdf8'); // sky-400
+                    
+                    // Remove enemy
+                    const index = enemies.indexOf(this.targetEnemy);
+                    if (index > -1) {
+                        enemies.splice(index, 1);
+                        score++;
+                        updateHUD();
+                        checkWinCondition();
+                    }
+                }
+            }
+            draw() {
+                ctx.strokeStyle = '#38bdf8';
+                ctx.lineWidth = 4;
+                ctx.lineCap = 'round';
+                ctx.beginPath();
+                ctx.moveTo(this.x, this.y);
+                ctx.lineTo(this.x - this.vx, this.y - this.vy); // draw tail
+                ctx.stroke();
+                
+                // Glow
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = '#38bdf8';
+                ctx.stroke();
+                ctx.shadowBlur = 0;
+            }
+        }
+
+        class Enemy {
+            constructor(questionObj) {
+                this.radius = 25;
+                this.x = random(this.radius + 10, w - this.radius - 10);
+                this.y = -this.radius;
+                // Base speed, increases slightly as score goes up
+                this.baseSpeed = random(0.5, 1.2) + (score * 0.05);
+                this.speed = this.baseSpeed;
+                this.question = questionObj;
+                this.color = '#94a3b8'; // slate-400
+                this.rotation = 0;
+                this.rotSpeed = random(-0.05, 0.05);
+                this.isAccelerated = false;
+            }
+            update(timeScale = 1) {
+                if (this === targetedEnemy) return; // Đứng yên nếu đang được chọn để trả lời
+                
+                this.y += this.speed * timeScale;
+                this.rotation += this.rotSpeed * timeScale;
+
+                // Check if hit base (bottom)
+                if (this.y > h - 60) {
+                    hitBase(this);
+                }
+            }
+            accelerate() {
+                this.isAccelerated = true;
+                this.speed = this.baseSpeed * 3; // Move much faster!
+                this.color = '#ef4444'; // Red warning
+            }
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation);
+                
+                // Draw an asteroid shape
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.moveTo(0, -this.radius);
+                ctx.lineTo(this.radius*0.8, -this.radius*0.6);
+                ctx.lineTo(this.radius, 0);
+                ctx.lineTo(this.radius*0.6, this.radius*0.8);
+                ctx.lineTo(0, this.radius);
+                ctx.lineTo(-this.radius*0.8, this.radius*0.5);
+                ctx.lineTo(-this.radius, 0);
+                ctx.lineTo(-this.radius*0.6, -this.radius*0.7);
+                ctx.closePath();
+                ctx.fill();
+
+                // Glow if accelerated
+                if(this.isAccelerated) {
+                    ctx.shadowBlur = 15;
+                    ctx.shadowColor = '#ef4444';
+                    ctx.stroke();
+                    ctx.shadowBlur = 0;
+                }
+
+                // Draw question mark in center
+                ctx.rotate(-this.rotation); // keep text upright
+                ctx.fillStyle = '#1e293b';
+                ctx.font = 'bold 20px Inter';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('?', 0, 0);
+
+                ctx.restore();
+            }
+        }
+
+        function drawShip(cx, bottom, accent) {
+            const t = Date.now() / 1000;
+            ctx.save();
+            ctx.translate(cx, bottom);
+
+            // Engine flames (flicker)
+            const flames = [[-6, 1], [6, 1], [-29, 0.55], [29, 0.55]];
+            flames.forEach(([ex, k]) => {
+                const len = (16 + Math.sin(t * 28 + ex) * 5 + Math.random() * 4) * k * 1.4;
+                const fy = ex === -6 || ex === 6 ? 2 : -2;
+                const g = ctx.createLinearGradient(0, fy, 0, fy + len);
+                g.addColorStop(0, 'rgba(254, 243, 199, 0.95)');
+                g.addColorStop(0.4, 'rgba(251, 146, 60, 0.8)');
+                g.addColorStop(1, 'rgba(239, 68, 68, 0)');
+                ctx.fillStyle = g;
+                ctx.beginPath();
+                ctx.moveTo(ex - 5 * k - 1, fy);
+                ctx.lineTo(ex, fy + len);
+                ctx.lineTo(ex + 5 * k + 1, fy);
+                ctx.closePath();
+                ctx.fill();
+            });
+
+            // Wings (drawn twice, mirrored)
+            for (const side of [-1, 1]) {
+                ctx.save();
+                ctx.scale(side, 1);
+                const wg = ctx.createLinearGradient(0, -34, 48, 0);
+                wg.addColorStop(0, '#64748b');
+                wg.addColorStop(1, '#1e293b');
+                ctx.fillStyle = wg;
+                ctx.strokeStyle = accent;
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                ctx.moveTo(10, -36);
+                ctx.lineTo(47, -8);
+                ctx.lineTo(50, 0);
+                ctx.lineTo(38, 0);
+                ctx.lineTo(10, -10);
+                ctx.closePath();
+                ctx.fill();
+                ctx.stroke();
+
+                // wing engine pod
+                ctx.fillStyle = '#334155';
+                ctx.fillRect(25, -6, 8, 8);
+
+                // wing cannon
+                ctx.fillStyle = '#94a3b8';
+                ctx.fillRect(41, -30, 3, 24);
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = accent;
+                ctx.fillStyle = accent;
+                ctx.beginPath();
+                ctx.arc(42.5, -31, 2.5, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.shadowBlur = 0;
+                ctx.restore();
+            }
+
+            // Main engine nozzles
+            ctx.fillStyle = '#334155';
+            ctx.fillRect(-10, -4, 8, 6);
+            ctx.fillRect(2, -4, 8, 6);
+
+            // Fuselage
+            const fg = ctx.createLinearGradient(-16, 0, 16, 0);
+            fg.addColorStop(0, '#64748b');
+            fg.addColorStop(0.5, '#f1f5f9');
+            fg.addColorStop(1, '#64748b');
+            ctx.fillStyle = fg;
+            ctx.strokeStyle = 'rgba(148, 163, 184, 0.9)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(0, -84);
+            ctx.bezierCurveTo(8, -70, 13, -50, 14, -28);
+            ctx.lineTo(16, -6);
+            ctx.lineTo(9, -2);
+            ctx.lineTo(-9, -2);
+            ctx.lineTo(-16, -6);
+            ctx.lineTo(-14, -28);
+            ctx.bezierCurveTo(-13, -50, -8, -70, 0, -84);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+
+            // Accent stripes
+            ctx.strokeStyle = accent;
+            ctx.lineWidth = 2;
+            ctx.globalAlpha = 0.85;
+            ctx.beginPath();
+            ctx.moveTo(-10, -26); ctx.lineTo(-11, -8);
+            ctx.moveTo(10, -26); ctx.lineTo(11, -8);
+            ctx.stroke();
+            ctx.globalAlpha = 1;
+
+            // Cockpit glass
+            const cg = ctx.createLinearGradient(0, -68, 0, -38);
+            cg.addColorStop(0, '#bae6fd');
+            cg.addColorStop(1, '#0369a1');
+            ctx.fillStyle = cg;
+            ctx.strokeStyle = '#0c4a6e';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.ellipse(0, -52, 6, 15, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+            ctx.beginPath();
+            ctx.ellipse(-2, -58, 1.8, 6, 0.1, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Blinking nav lights
+            const blink = 0.5 + 0.5 * Math.sin(t * 5);
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = accent;
+            ctx.fillStyle = accent;
+            ctx.globalAlpha = 0.5 + 0.5 * blink;
+            ctx.beginPath();
+            ctx.arc(-10, -16, 2, 0, Math.PI * 2);
+            ctx.arc(10, -16, 2, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.globalAlpha = 1;
+            ctx.shadowBlur = 0;
+
+            ctx.restore();
+        }
+
+        function drawBase() {
+            const centerX = w / 2;
+            const baseY = h;
+            const baseRadius = 108;
+            const accent = shield > 0 ? '#34d399' : (hp <= 1 ? '#ef4444' : '#38bdf8');
+
+            // Spaceship (inside the shield bubble)
+            drawShip(centerX, baseY - 18, accent);
+
+            // Shield bubble
+            ctx.beginPath();
+            ctx.arc(centerX, baseY, baseRadius, Math.PI, 0);
+            const gradient = ctx.createRadialGradient(centerX, baseY, baseRadius * 0.6, centerX, baseY, baseRadius);
+
+            // Change color based on HP and Shield
+            let glowColor = 'rgba(56, 189, 248, 0.35)'; // Sky blue
+            if (shield > 0) glowColor = `rgba(52, 211, 153, ${0.3 + (shield/100)*0.5})`; // Emerald glow based on shield
+            else if (hp <= 1) glowColor = 'rgba(239, 68, 68, 0.45)'; // Red danger
+            else if (hp <= 3) glowColor = 'rgba(234, 179, 8, 0.35)'; // Yellow warning
+
+            gradient.addColorStop(0, 'rgba(15, 23, 42, 0)');
+            gradient.addColorStop(1, glowColor);
+            ctx.fillStyle = gradient;
+            ctx.fill();
+
+            // Shield border
+            ctx.strokeStyle = accent;
+            ctx.lineWidth = shield > 0 ? 3 + (shield/20) : 2;
+            ctx.stroke();
+        }
+
+        function createExplosion(x, y, color) {
+            for (let i = 0; i < 20; i++) {
+                particles.push(new Particle(x, y, color));
+            }
+        }
+
+        function hitBase(enemy) {
+            // Remove enemy
+            const index = enemies.indexOf(enemy);
+            if (index > -1) enemies.splice(index, 1);
+
+            // Deduct HP or Shield (5% shield absorbs 1 hit)
+            if (shield >= 5) {
+                shield -= 5;
+                createExplosion(enemy.x, h - 80, '#34d399'); // Emerald explosion for shield
+            } else {
+                hp--;
+                shield = 0; // Break remaining weak shield
+                createExplosion(enemy.x, h - 80, '#ef4444');
+            }
+            
+            updateHUD();
+
+            // Visual feedback on container
+            container.classList.add('shield-warning');
+            setTimeout(() => container.classList.remove('shield-warning'), 500);
+
+            if (hp <= 0) {
+                if (targetedEnemy) {
+                    // Đóng modal câu hỏi nếu căn cứ nổ tung trong lúc đang trả lời
+                    clearInterval(timerInterval);
+                    modalQ.classList.add('hidden');
+                    modalQ.classList.remove('flex');
+                    targetedEnemy = null;
+                }
+                endGame(false);
+            }
+        }
+
+        // Handle click/tap on canvas
+        canvas.addEventListener('pointerdown', (e) => {
+            if (isGameOver || targetedEnemy) return; // Không cho bấm khi đang có câu hỏi
+            
+            // Hide instruction
+            instruction.style.opacity = '0';
+
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+
+            // Check if click intersects with any enemy (reverse loop to click top-most)
+            for (let i = enemies.length - 1; i >= 0; i--) {
+                const enemy = enemies[i];
+                const dist = Math.hypot(mouseX - enemy.x, mouseY - enemy.y);
+                
+                // Add a little padding to the click radius for easier tapping on mobile
+                if (dist < enemy.radius + 15) {
+                    openQuestionModal(enemy);
+                    break; // Only select one
+                }
+            }
+        });
+
+        // Keyboard support for answers
+        document.addEventListener('keydown', (e) => {
+            if (!modalQ.classList.contains('hidden')) {
+                if (['1', '2', '3', '4'].includes(e.key)) {
+                    const idx = parseInt(e.key) - 1;
+                    const options = document.getElementById('q-options').children;
+                    if(options[idx]) options[idx].click();
+                }
+            }
+        });
+
+        function openQuestionModal(enemy) {
+            targetedEnemy = enemy;
+            const qObj = enemy.question;
+            
+            document.getElementById('q-text').innerText = qObj.q;
+            
+            // Timer setup
+            const maxTime = qObj.timeLimit || 15;
+            questionTimeLeft = maxTime;
+            const timerText = document.getElementById('timer-text');
+            const timerBar = document.getElementById('modal-timer-bar');
+            
+            timerText.innerText = `${maxTime}s`;
+            timerText.className = 'text-sky-400';
+            timerBar.style.width = `100%`;
+            timerBar.className = 'bg-sky-400 h-full transition-all duration-1000 ease-linear';
+            
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                questionTimeLeft--;
+                timerText.innerText = `${questionTimeLeft}s`;
+                timerBar.style.width = `${(questionTimeLeft / maxTime) * 100}%`;
+                
+                if (questionTimeLeft <= 5) {
+                    timerBar.classList.replace('bg-sky-400', 'bg-rose-500');
+                    timerText.classList.replace('text-sky-400', 'text-rose-500');
+                }
+                
+                if (questionTimeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    submitAnswer(-1, qObj.ans); // Timeout counts as wrong answer
+                }
+            }, 1000);
+            
+            const optionsContainer = document.getElementById('q-options');
+            optionsContainer.innerHTML = '';
+            
+            qObj.opts.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn w-full text-left p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 focus:outline-none text-slate-200 font-medium';
+                const prefix = String.fromCharCode(65 + idx); // A, B, C, D
+                btn.innerHTML = `<span class="font-bold text-sky-400 mr-3 px-2 py-1 bg-slate-900 rounded">${prefix}</span> ${opt}`;
+                btn.onclick = () => submitAnswer(idx, qObj.ans);
+                optionsContainer.appendChild(btn);
+            });
+            
+            modalQ.classList.remove('hidden');
+            modalQ.classList.add('flex');
+        }
+
+        function submitAnswer(selectedIdx, correctIdx) {
+            clearInterval(timerInterval);
+            modalQ.classList.add('hidden');
+            modalQ.classList.remove('flex');
+            
+            const isCorrect = (selectedIdx === correctIdx);
+            
+            if (isCorrect) {
+                // Calculate shield bonus
+                const bonusShield = Math.floor(questionTimeLeft / 4);
+                if (bonusShield > 0) {
+                    shield = Math.min(100, shield + bonusShield);
+                }
+
+                // Fire Laser!
+                const startX = w / 2;
+                const startY = h - 104;
+                lasers.push(new Laser(startX, startY, targetedEnemy.x, targetedEnemy.y, targetedEnemy));
+            } else {
+                // Penalty: Enemy accelerates and turns red
+                targetedEnemy.accelerate();
+                
+                // Put question back in pool so they have to answer it again later if it spawns
+                targetedEnemy.question.timeLimit = 10; // Cập nhật thời gian còn 10s cho lần xuất hiện sau
+                pendingQuestions.push(targetedEnemy.question);
+                shuffleArray(pendingQuestions);
+            }
+
+            targetedEnemy = null;
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function updateHUD() {
+            // Update Hearts
+            healthBar.innerHTML = '';
+            for(let i=0; i<MAX_HP; i++) {
+                const heart = document.createElement('span');
+                heart.className = 'text-lg filter drop-shadow-md';
+                heart.innerText = i < hp ? '❤️' : '🖤';
+                healthBar.appendChild(heart);
+            }
+            
+            // Update Shield
+            document.getElementById('shield-display').innerText = `${shield}%`;
+            document.getElementById('shield-bar').style.width = `${shield}%`;
+            
+            // Update Score
+            scoreDisplay.innerText = score;
+        }
+
+        function checkWinCondition() {
+            if (score >= questionPool.length) {
+                endGame(true);
+            }
+        }
+
+        function endGame(isWin) {
+            isGameOver = true;
+            modalEnd.classList.remove('hidden');
+            modalEnd.classList.add('flex');
+            
+            const box = document.getElementById('end-box');
+            const icon = document.getElementById('end-icon');
+            const title = document.getElementById('end-title');
+            const desc = document.getElementById('end-desc');
+
+            const nextBtn = document.getElementById('btn-next-level');
+            const retryBtn = document.getElementById('btn-retry-l1');
+            const retryPrimary = 'relative z-10 w-full bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-bold py-4 px-6 rounded-xl text-lg shadow-[0_0_20px_rgba(14,165,233,0.4)] transition-transform active:scale-95';
+            const retrySecondary = 'relative z-10 w-full bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-bold py-3 px-6 rounded-xl transition-transform active:scale-95';
+            if (isWin) {
+                level1Time = (Date.now() - runStart) / 1000;
+                nextBtn.classList.remove('hidden');
+                retryBtn.className = retrySecondary;
+                box.className = 'bg-slate-900 border-2 border-sky-500 rounded-3xl p-8 w-full max-w-sm shadow-[0_0_50px_rgba(14,165,233,0.3)] modal-enter relative overflow-hidden';
+                icon.innerText = '🛡️';
+                title.innerText = 'Phòng Thủ Thành Công!';
+                title.className = 'text-2xl font-black mb-2 text-sky-400 relative z-10';
+                desc.innerText = `Xuất sắc! Bạn đã trả lời đúng ${score}/28 câu và bảo vệ căn cứ. Hãy sửa chữa phi thuyền ở màn 2!`;
+            } else {
+                nextBtn.classList.add('hidden');
+                retryBtn.className = retryPrimary;
+                box.className = 'bg-slate-900 border-2 border-rose-500 rounded-3xl p-8 w-full max-w-sm shadow-[0_0_50px_rgba(239,68,68,0.3)] modal-enter relative overflow-hidden';
+                icon.innerText = '💥';
+                title.innerText = 'Căn Cứ Thất Thủ';
+                title.className = 'text-3xl font-black mb-2 text-rose-500 relative z-10';
+                desc.innerText = `Thiên thạch đã phá hủy lá chắn! Bạn diệt được ${score}/28 mục tiêu.`;
+            }
+        }
+
+        function initGame() {
+            resize();
+            runStart = Date.now();
+            level1Time = null;
+            level1Skipped = false;
+            modalEnd.classList.add('hidden');
+            modalEnd.classList.remove('flex');
+            instruction.style.opacity = '1';
+            
+            hp = MAX_HP;
+            shield = 0;
+            score = 0;
+            targetedEnemy = null;
+            isGameOver = false;
+            enemies = [];
+            lasers = [];
+            particles = [];
+            spawnTimer = 0;
+            
+            // Deep copy and shuffle questions
+            pendingQuestions = JSON.parse(JSON.stringify(questionPool));
+            shuffleArray(pendingQuestions);
+
+            // Init stars
+            stars = [];
+            for (let i = 0; i < 100; i++) stars.push(new Star());
+
+            updateHUD();
+            
+            if(animationId) cancelAnimationFrame(animationId);
+            gameLoop();
+        }
+
+        function gameLoop() {
+            if (isGameOver) return;
+
+            // Nếu có thiên thạch đang được chọn, các vật thể khác sẽ bay cực chậm (tốc độ = 1/50)
+            const timeScale = (targetedEnemy || pwOpen) ? 0.02 : 1;
+
+            // Clear Canvas
+            ctx.clearRect(0, 0, w, h);
+
+            // Update & Draw Stars
+            stars.forEach(s => { s.update(timeScale); s.draw(); });
+
+            // Spawning Logic
+            if (pendingQuestions.length > 0) {
+                spawnTimer += timeScale; // Quá trình sinh thiên thạch cũng chậm lại
+                // Decrease spawn rate as score gets higher to increase difficulty
+                const currentSpawnRate = Math.max(60, spawnRate - (score * 2)); 
+                
+                if (spawnTimer >= currentSpawnRate) {
+                    spawnTimer = 0;
+                    const q = pendingQuestions.pop();
+                    enemies.push(new Enemy(q));
+                }
+            }
+
+            // Update & Draw Enemies
+            for (let i = enemies.length - 1; i >= 0; i--) {
+                const e = enemies[i];
+                e.update(timeScale);
+                e.draw();
+            }
+
+            // Update & Draw Lasers
+            for (let i = lasers.length - 1; i >= 0; i--) {
+                const l = lasers[i];
+                l.update(timeScale);
+                if (l.active) l.draw();
+                else lasers.splice(i, 1);
+            }
+
+            // Update & Draw Particles
+            for (let i = particles.length - 1; i >= 0; i--) {
+                const p = particles[i];
+                p.update(timeScale);
+                if (p.life > 0) p.draw();
+                else particles.splice(i, 1);
+            }
+
+            // Draw Base last so it overlays elements behind it
+            drawBase();
+
+            animationId = requestAnimationFrame(gameLoop);
+        }
+
+
+
+        // --- Bỏ qua màn bằng mật khẩu ---
+        const SKIP_PASSWORD = '2627';
+        let pwOpen = false;
+        let pwLevel = 1;
+        const pwModal = document.getElementById('pw-modal');
+        const pwInput = document.getElementById('pw-input');
+        const pwMsg = document.getElementById('pw-msg');
+
+        function openSkip(level) {
+            pwLevel = level;
+            pwOpen = true;
+            pwInput.value = '';
+            pwInput.classList.remove('pw-bad');
+            pwMsg.textContent = '';
+            document.getElementById('pw-sub').textContent = level === 1 ? 'Nhập mật khẩu để sang màn 2' : 'Nhập mật khẩu để hoàn thành màn 2';
+            pwModal.hidden = false;
+            setTimeout(() => pwInput.focus(), 50);
+        }
+
+        function closePw() {
+            pwOpen = false;
+            pwModal.hidden = true;
+        }
+
+        function submitPw() {
+            // bỏ khoảng trắng, đổi chữ số toàn góc (bàn phím điện thoại) về chữ số thường
+            const typed = pwInput.value.normalize('NFKC').replace(/\s+/g, '');
+            if (typed === SKIP_PASSWORD) {
+                const level = pwLevel;
+                closePw();
+                if (level === 1) startLevel2(true);
+                else level2.skip();
+            } else {
+                pwInput.classList.add('pw-bad');
+                pwMsg.textContent = 'Sai mật khẩu, thử lại nhé.';
+                pwInput.value = '';
+                pwInput.focus();
+            }
+        }
+        pwInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') { e.preventDefault(); submitPw(); }
+        });
+        pwInput.addEventListener('input', () => { pwInput.classList.remove('pw-bad'); pwMsg.textContent = ''; });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && pwOpen) closePw(); });
+
+        // --- Chuyển màn ---
+        function startLevel2(skipped) {
+            isGameOver = true;
+            level1Skipped = !!skipped;
+            modalEnd.classList.add('hidden');
+            modalEnd.classList.remove('flex');
+            const l2 = document.getElementById('level2');
+            l2.hidden = false;
+            l2.scrollTop = 0;
+            level2.init();
+        }
+
+        function backToLevel1() {
+            document.getElementById('level2').hidden = true;
+            initGame();
+        }
+
+        // Start game on load
+        window.onload = initGame;
+    </script>
+    <script>
+(function(){
+
+        // --- DATA: 50 Questions ---
+        const originalQuestions = [
+            { q: "Dụng cụ nào sau đây được sử dụng để lấy một lượng nhỏ hoá chất dạng bột khô trong lọ bảo quản?", opts: ["Ống đong chia độ.", "Kẹp gỗ giữ ống nghiệm.", "Thìa (hoặc muỗng) lấy hoá chất.", "Đĩa petri thuỷ tinh."], ans: 2 },
+            { q: "Khi tiến hành đun nóng hoá chất lỏng trong ống nghiệm trên ngọn lửa đèn cồn, thao tác nào sau đây là BẮT BUỘC?", opts: ["Nghiêng ống nghiệm 45 - 60° và hướng miệng ống về phía không có người.", "Đổ hoá chất đầy tràn đến miệng ống nghiệm.", "Đóng chặt nút cao su vào miệng ống nghiệm trước khi đun.", "Dùng tay cầm trực tiếp vào thân ống nghiệm sát ngọn lửa."], ans: 0 },
+            { q: "Kí hiệu cảnh báo có hình 'ngọn lửa cháy trên đường gạch ngang' dán trên lọ hoá chất tượng trưng cho đặc tính nào?", opts: ["Hoá chất độc hại sinh học.", "Hoá chất ăn mòn da.", "Hoá chất nguy hiểm gây nổ.", "Hoá chất dễ cháy."], ans: 3 },
+            { q: "Khi làm việc với các hoá chất độc hại hoặc có mùi hắc cay xốc nồng, thao tác thí nghiệm phải thực hiện trong:", opts: ["Tủ hút khí độc (tủ hút an toàn).", "Cốc thuỷ tinh chia độ.", "Tủ lạnh gia đình.", "Chậu nước cất."], ans: 0 },
+            { q: "Dụng cụ nào sau đây dùng để đo nhiệt độ của dung dịch trong quá trình thực hành hoá học?", opts: ["Cân điện tử.", "Nhiệt kế.", "Ống pipette.", "Chậu nước cất."], ans: 1 },
+            { q: "Quy tắc nào sau đây là BẮT BUỘC để đảm bảo an toàn điện khi sử dụng thiết bị điện trong phòng thực hành KHTN 8?", opts: ["Chỉ cắm phích điện khi đã kiểm tra dây dẫn an toàn và dùng điện áp quy định.", "Cắm phích điện khi tay đang ướt.", "Tự ý thay đổi dây nối bên trong thiết bị điện.", "Giật mạnh dây điện để rút phích cắm."], ans: 0 },
+            { q: "Dụng cụ nào dưới đây có các vạch chia dung tích rõ ràng, dùng để đong lấy chính xác thể tích chất lỏng cần dùng?", opts: ["Phễu thuỷ tinh.", "Kẹp sắt.", "Ống đong có chia độ.", "Đèn cồn."], ans: 2 },
+            { q: "Sự biến đổi vật lí là quá trình trong đó chất bị biến đổi về:", opts: ["Cấu tạo hoá học làm xuất hiện chất mới.", "Trạng thái, kích thước hoặc hình dạng nhưng vẫn giữ nguyên bản chất ban đầu.", "Màu sắc thành một chất hoàn toàn mới.", "Khối lượng nguyên tử của các nguyên tố."], ans: 1 },
+            { q: "Quá trình nào sau đây là hiện tượng biến đổi hoá học?", opts: ["Đun sôi nước cất thấy hơi nước bốc lên.", "Xé nhỏ tờ giấy trắng thành nhiều mảnh.", "Hoà tan đường vào nước thu được nước đường.", "Lên men rượu nho thành giấm ăn có vị chua."], ans: 3 },
+            { q: "Phản ứng hoá học là quá trình biến đổi:", opts: ["Từ chất này thành chất khác có tính chất hoàn toàn mới.", "Trạng thái từ thể rắn sang thể lỏng của một chất.", "Hình dạng bên ngoài mà không tạo chất mới.", "Thể tích của chất khi đun nóng."], ans: 0 },
+            { q: "Trong suốt quá trình phản ứng hoá học diễn ra, lượng chất sản phẩm tạo thành sẽ:", opts: ["Tăng dần theo thời gian.", "Giảm dần theo thời gian.", "Không thay đổi.", "Biến mất ngay từ đầu."], ans: 0 },
+            { q: "Phản ứng thu nhiệt là phản ứng hoá học trong đó có sự:", opts: ["Giải phóng năng lượng ra môi trường.", "Hấp thụ năng lượng dưới dạng nhiệt từ môi trường xung quanh.", "Tự bùng cháy không cần cung cấp nhiệt.", "Làm tăng nhiệt độ của môi trường xung quanh."], ans: 1 },
+            { q: "Dấu hiệu nào sau đây chứng tỏ có phản ứng hoá học xảy ra?", opts: ["Chất chỉ thay đổi kích thước hạt.", "Chất chuyển từ thể rắn sang lỏng.", "Xuất hiện chất kết tủa mới, sự đổi màu hoặc sủi bọt khí.", "Thể tích chất lỏng tăng lên."], ans: 2 },
+            { q: "Phản ứng toả nhiệt là phản ứng hoá học giải phóng năng lượng dưới dạng nhiệt ra môi trường. Ví dụ về phản ứng toả nhiệt là:", opts: ["Quá trình đốt cháy củi khô khi nấu ăn.", "Chất chuyển từ thể rắn sang lỏng.", "Quá trình nung gốm sứ.", "Phản ứng phân huỷ thu nhiệt."], ans: 0 },
+            { q: "Mol là lượng chất có chứa bao nhiêu hạt nguyên tử hoặc phân tử của chất đó?", opts: ["3,011 × 10²³ hạt.", "1,505 × 10²³ hạt.", "6,022 × 10²³ hạt (hằng số Avogadro).", "12,000 × 10²³ hạt."], ans: 2 },
+            { q: "Khối lượng mol (kí hiệu là M) của một chất là khối lượng tính bằng gam của:", opts: ["1 mol chất đó.", "1 hạt nguyên tử.", "100 gam chất đó.", "1 lít chất khí."], ans: 0 },
+            { q: "Ở điều kiện chuẩn (25 °C và 1 bar), thể tích mol của 1 mol chất khí bất kì đều bằng:", opts: ["22,4 lít.", "22,71 lít.", "24,00 lít.", "24,79 lít."], ans: 3 },
+            { q: "Công thức chuyển đổi giữa khối lượng chất (m) và số mol chất (n) là:", opts: ["n = m × M.", "n = m / M.", "n = M / m.", "n = m + M."], ans: 1 },
+            { q: "Công thức tính tỉ khối của khí A so với khí B (dA/B) là:", opts: ["dA/B = MA / MB.", "dA/B = MB / MA.", "dA/B = MA × MB.", "dA/B = MA - MB."], ans: 0 },
+            { q: "Để so sánh khí A nặng hay nhẹ hơn không khí bao nhiêu lần, người ta so sánh MA với khối lượng mol trung bình của không khí là:", opts: ["16 g/mol.", "22,4 g/mol.", "29 g/mol.", "32 g/mol."], ans: 2 },
+            { q: "Khí Hydrogen (H2, M = 2 g/mol) có tỉ khối so với không khí (M_kk = 29 g/mol) xấp xỉ 0,07. Điều này chứng tỏ khí H2 là khí:", opts: ["Nhẹ hơn không khí rất nhiều.", "Nặng hơn không khí 2 lần.", "Nặng bằng không khí.", "Nặng hơn không khí 14 lần."], ans: 0 },
+            { q: "Dung dịch được định nghĩa là hỗn hợp đồng nhất giữa:", opts: ["Hai chất rắn không tan.", "Chất tan và dung môi.", "Chất khí và chất rắn không tan.", "Dầu ăn và nước."], ans: 1 },
+            { q: "Khi hoà tan đường vào nước thu được nước đường, chất đóng vai trò là dung môi là:", opts: ["Nước.", "Đường.", "Cả đường và nước.", "Không khí."], ans: 0 },
+            { q: "Dung dịch không thể hoà tan thêm chất tan đó ở một nhiệt độ xác định gọi là:", opts: ["Dung dịch chưa bão hoà.", "Dung dịch bão hoà.", "Dung dịch loãng.", "Dung dịch hỗn hợp."], ans: 1 },
+            { q: "Độ tan (S) của một chất trong nước là số gam chất đó tan trong 100 gam nước để tạo thành dung dịch bão hoà ở nhiệt độ xác định. Đơn vị của độ tan trong các lựa chọn sau là:", opts: ["gam (g).", "lít (L).", "mol.", "gam/mol."], ans: 0 },
+            { q: "Nồng độ phần trăm (C%) của dung dịch cho biết số gam chất tan có trong:", opts: ["10 gam dung dịch.", "100 gam dung dịch.", "100 gam nước.", "1 lít dung dịch."], ans: 1 },
+            { q: "Công thức đúng tính nồng độ phần trăm (C%) của dung dịch là:", opts: ["C% = (m_ct / m_dd) × 100%.", "C% = (m_dd / m_ct) × 100%.", "C% = (m_ct / m_nước) × 100%.", "C% = (n_ct / V_dd) × 100%."], ans: 0 },
+            { q: "Nồng độ mol (CM) của dung dịch cho biết số mol chất tan có trong:", opts: ["100 gam dung dịch.", "100 gam nước.", "1 lít dung dịch.", "100 mL dung dịch."], ans: 2 },
+            { q: "Công thức đúng tính nồng độ mol (CM) của dung dịch là (với V tính bằng lít):", opts: ["CM = m / V.", "CM = n × V.", "CM = V / n.", "CM = n / V."], ans: 3 },
+            { q: "Theo Định luật bảo toàn khối lượng, trong một phản ứng hoá học, tổng khối lượng của các chất sản phẩm:", opts: ["Luôn lớn hơn tổng khối lượng các chất tham gia.", "Luôn nhỏ hơn tổng khối lượng các chất tham gia.", "Bằng tổng khối lượng của các chất tham gia.", "Không có mối liên hệ với chất tham gia."], ans: 2 },
+            { q: "Nội dung Định luật bảo toàn khối lượng được phát biểu dựa trên sự bảo toàn của đại lượng nào sau đây?", opts: ["Số lượng nguyên tử của mỗi nguyên tố.", "Số lượng phân tử của mỗi chất.", "Cấu tạo liên kết giữa các nguyên tử.", "Thể tích toàn phần của hệ phản ứng."], ans: 0 },
+            { q: "Phương trình hoá học biểu diễn ngắn gọn phản ứng hoá học bằng:", opts: ["Tên gọi đầy đủ bằng chữ của các chất.", "Công thức hoá học của các chất tham gia và sản phẩm.", "Kí hiệu của các nguyên tố đơn lẻ.", "Khối lượng mol của các chất."], ans: 1 },
+            { q: "Các số thích hợp đặt trước công thức hoá học trong phương trình để làm cho số nguyên tử mỗi nguyên tố ở hai vế bằng nhau gọi là:", opts: ["Chỉ số chân.", "Hệ số phản ứng (hệ số cân bằng).", "Số nguyên tử.", "Khối lượng mol."], ans: 1 },
+            { q: "Thao tác nào sau đây là BẮT BUỘC KHÔNG ĐƯỢC LÀM khi cân bằng phương trình hoá học?", opts: ["Thay đổi chỉ số chân trong công thức hoá học.", "Thêm hệ số thích hợp vào trước công thức hoá học.", "Kiểm tra số nguyên tử ở hai vế.", "Viết đúng công thức hoá học các chất."], ans: 0 },
+            { q: "Phương trình hoá học cân bằng: 2H2 + O2 → 2H2O cho biết tỉ lệ số phân tử H2 : O2 : H2O là:", opts: ["2 : 1 : 2.", "1 : 2 : 2.", "2 : 2 : 1.", "1 : 1 : 1."], ans: 0 },
+            { q: "Khi nung đá vôi (CaCO3) trong lò hở thu được vôi sống (CaO) và khí CO2 thoát ra ngoài. Khối lượng chất rắn còn lại sau phản ứng giảm đi là do:", opts: ["Khí CO2 sinh ra đã thoát vào không khí.", "Định luật bảo toàn khối lượng không đúng trong phản ứng này.", "Đá vôi bị tiêu hao hoàn toàn thành năng lượng.", "Khối lượng vôi sống nhẹ hơn nguyên tử calcium."], ans: 0 },
+            { q: "Khi tính toán lượng chất tham gia hoặc sản phẩm theo phương trình hoá học, bước ĐẦU TIÊN cần làm là:", opts: ["Tính ngay khối lượng sản phẩm.", "Đổi các dữ kiện đề bài (khối lượng, thể tích) sang số mol.", "So sánh khối lượng chất dư.", "Rút gọn hệ số của phương trình."], ans: 1 },
+            { q: "Trong phản ứng hoá học xảy ra hoàn toàn có chất dư, lượng sản phẩm tạo thành phải được tính theo:", opts: ["Lượng chất tham gia còn dư.", "Lượng chất tham gia phản ứng hết (chất thiếu).", "Trung bình cộng của hai chất tham gia.", "Chất có khối lượng lớn hơn."], ans: 1 },
+            { q: "Trong phản ứng hoá học xảy ra hoàn toàn có chất dư, lượng sản phẩm tạo thành được tính theo lượng của:", opts: ["Chất tham gia còn dư.", "Chất tham gia phản ứng hết (chất thiếu).", "Trung bình cộng khối lượng hai chất tham gia.", "Chất tham gia có khối lượng lớn hơn."], ans: 1 },
+            { q: "Hiệu suất phản ứng hoá học (H%) được tính bằng công thức:", opts: ["H% = (Lượng sản phẩm lí thuyết / Lượng sản phẩm thực tế) × 100%.", "H% = (Lượng sản phẩm thực tế / Lượng sản phẩm lí thuyết) × 100%.", "H% = (Lượng chất dư / Lượng chất hết) × 100%.", "H% = (Lượng chất tham gia / Lượng sản phẩm) × 100%."], ans: 1 },
+            { q: "Khi hiệu suất phản ứng H% < 100%, khối lượng sản phẩm thực tế thu được luôn:", opts: ["Lớn hơn khối lượng sản phẩm tính theo lí thuyết.", "Bằng khối lượng sản phẩm tính theo lí thuyết.", "Nhỏ hơn khối lượng sản phẩm tính theo lí thuyết.", "Gấp đôi khối lượng sản phẩm tính theo lí thuyết."], ans: 2 },
+            { q: "Nếu phản ứng hoá học xảy ra hoàn toàn không bị thất thoát (hiệu suất H = 100%) thì khối lượng sản phẩm thực tế sẽ:", opts: ["Nhỏ hơn khối lượng lí thuyết.", "Bằng khối lượng lí thuyết.", "Lớn hơn khối lượng lí thuyết.", "Bằng 0."], ans: 1 },
+            { q: "Cho phương trình: N2 + 3H2 → 2NH3. Nếu có 0,1 mol N2 phản ứng hết thì số mol NH3 tạo thành là:", opts: ["0,1 mol.", "0,2 mol.", "0,3 mol.", "0,4 mol."], ans: 1 },
+            { q: "Tốc độ phản ứng hoá học là đại lượng đặc trưng cho:", opts: ["Mức độ toả nhiệt nhiều hay ít của phản ứng.", "Mức độ nhanh hay chậm của phản ứng hoá học.", "Khối lượng sản phẩm thu được cuối cùng.", "Số lượng liên kết bị đứt gãy."], ans: 1 },
+            { q: "Yếu tố nào sau đây KHÔNG làm tăng tốc độ phản ứng hoá học giữa chất rắn và chất lỏng?", opts: ["Tăng nhiệt độ phản ứng.", "Nghiền nhỏ chất rắn thành dạng bột.", "Giảm diện tích bề mặt tiếp xúc của chất rắn.", "Tăng nồng độ dung dịch chất lỏng."], ans: 2 },
+            { q: "Biện pháp chẻ nhỏ củi đun bếp giúp củi bùng cháy nhanh hơn là ứng dụng của yếu tố nào?", opts: ["Tăng diện tích bề mặt tiếp xúc.", "Tăng nồng độ.", "Thêm chất xúc tác.", "Giảm nhiệt độ."], ans: 0 },
+            { q: "Việc bảo quản thức ăn dư thừa trong ngăn mát tủ lạnh giúp thức ăn lâu bị ôi thiu là ứng dụng của việc:", opts: ["Tăng nhiệt độ làm tăng tốc độ phản ứng.", "Giảm nhiệt độ làm giảm tốc độ các phản ứng phân huỷ của vi khuẩn.", "Tăng diện tích tiếp xúc của thực phẩm.", "Dùng chất xúc tác hoá học."], ans: 1 },
+            { q: "Chất xúc tác là chất có tác dụng làm tăng tốc độ phản ứng hoá học và sau phản ứng sẽ:", opts: ["Bị tiêu hao hoàn toàn.", "Chuyển thành chất sản phẩm mới.", "Không bị biến đổi về chất và khối lượng.", "Bị phân huỷ thành chất khí."], ans: 2 },
+            { q: "Các enzyme có trong cơ thể sinh vật (như amylase trong nước bọt) đóng vai trò là:", opts: ["Chất dinh dưỡng cung cấp năng lượng.", "Chất xúc tác sinh học giúp tăng tốc độ phản ứng sinh hoá.", "Chất làm giảm tốc độ tiêu hoá thức ăn.", "Chất bị tiêu hoá hoàn toàn thành chất khác."], ans: 1 },
+            { q: "Theo thuyết va chạm, tốc độ phản ứng hoá học tăng lên khi:", opts: ["Tần số va chạm hiệu quả giữa các phân tử chất phản ứng tăng lên.", "Số lượng phân tử giảm đi.", "Khoảng cách giữa các phân tử tăng lên tối đa.", "Các phân tử ngừng chuyển động."], ans: 0 }
+        ];
+
+        // System Config
+        const MAX_HP = 5;
+        let hp = MAX_HP;
+        let totalRepaired = 0;
+        let partsData = [];
+        let currentEditingPart = null;
+        let questionTimer = null;
+        let timeLeft = 15;
+
+        // DOM Elements
+        const livesEl = document.getElementById('l2-lives-display');
+        const globalProgressEl = document.getElementById('l2-global-progress');
+        const panelParts = document.getElementById('l2-panel-parts');
+        const modalQ = document.getElementById('l2-modal-question');
+        const modalEnd = document.getElementById('l2-modal-end');
+
+        function shuffleArray(array) {
+            let arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        let startTime = Date.now();
+        let skipped2 = false;
+
+        function initGame() {
+            startTime = Date.now();
+            skipped2 = false;
+            document.getElementById('l2-stats').hidden = true;
+            hp = MAX_HP;
+            totalRepaired = 0;
+            updateHP();
+            globalProgressEl.innerText = 0;
+            
+            modalEnd.classList.add('hidden');
+            modalEnd.classList.remove('flex');
+
+            // 1. Shuffle all 50 questions
+            const shuffledQ = shuffleArray(originalQuestions);
+
+            // 2. Distribute to 5 parts (10 each)
+            partsData = [
+                { id: 'engine', name: 'Động cơ', icon: '🔥', max: 10, qPool: shuffledQ.slice(0, 10), progress: 0 },
+                { id: 'cockpit', name: 'Khoang điều khiển', icon: '💻', max: 10, qPool: shuffledQ.slice(10, 20), progress: 0 },
+                { id: 'radar', name: 'Ra đa tín hiệu', icon: '📡', max: 10, qPool: shuffledQ.slice(20, 30), progress: 0 },
+                { id: 'wings', name: 'Cánh phi thuyền', icon: '✈️', max: 10, qPool: shuffledQ.slice(30, 40), progress: 0 },
+                { id: 'storage', name: 'Kho lương thực', icon: '📦', max: 10, qPool: shuffledQ.slice(40, 50), progress: 0 }
+            ];
+
+            renderPanel();
+            updateSVGVisuals();
+        }
+
+        function updateHP() {
+            livesEl.innerText = '❤️'.repeat(hp) + '🖤'.repeat(MAX_HP - hp);
+            if (hp <= 0) {
+                endGame(false);
+            }
+        }
+
+        function renderPanel() {
+            panelParts.innerHTML = '';
+            partsData.forEach(part => {
+                const percent = Math.floor((part.progress / part.max) * 100);
+                const isFixed = part.progress >= part.max;
+                const tier = tierOf(percent);
+                
+                const btn = document.createElement('div');
+                btn.className = `p-3 rounded-xl border flex items-center justify-between transition-all ${isFixed ? 'bg-emerald-900/30 border-emerald-500/50 cursor-default' : 'bg-slate-800/80 border-slate-700 hover:bg-slate-700 cursor-pointer active:scale-95'}`;
+                btn.style.borderColor = tier.color + '99';
+                if (!isFixed) {
+                    btn.onclick = () => selectPart(part.id);
+                }
+
+                btn.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <div class="text-xl">${part.icon}</div>
+                        <div>
+                            <div class="font-bold text-sm ${isFixed ? 'text-emerald-400' : 'text-slate-200'}">${part.name}</div>
+                            <div class="text-xs ${isFixed ? 'text-emerald-500/70' : 'text-slate-500'}">${isFixed ? 'Đã phục hồi' : 'Cần sửa chữa'}</div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="font-mono font-bold text-sm" style="color:${tier.text}">${percent}%</div>
+                        <div style="width:56px;height:4px;margin-top:4px;border-radius:9999px;background:#1e293b;overflow:hidden"><div style="width:${percent}%;height:100%;background:${tier.color};transition:width .3s"></div></div>
+                    </div>
+                `;
+                panelParts.appendChild(btn);
+            });
+        }
+
+        // Màu theo phần trăm hồi phục: 0-39 đỏ, 40-69 cam, 70-89 vàng, 90-100 xanh lá
+        function tierOf(pct) {
+            if (pct >= 90) return { key: 'tier-green', color: '#10b981', text: '#34d399' };
+            if (pct >= 70) return { key: 'tier-yellow', color: '#eab308', text: '#facc15' };
+            if (pct >= 40) return { key: 'tier-orange', color: '#f97316', text: '#fb923c' };
+            return { key: 'broken', color: '#ef4444', text: '#f87171' };
+        }
+
+        function updateSVGVisuals() {
+            partsData.forEach(part => {
+                const el = document.getElementById(`part-${part.id}`);
+                if (!el) return;
+                
+                // Reset classes
+                el.classList.remove('broken', 'repairing', 'repaired', 'tier-orange', 'tier-yellow', 'tier-green');
+                
+                const pct = Math.floor((part.progress / part.max) * 100);
+                el.classList.add(tierOf(pct).key);
+                if (part.progress >= part.max) el.classList.add('repaired');
+            });
+        }
+
+        function selectPart(id) {
+            const part = partsData.find(p => p.id === id);
+            if (!part || part.progress >= part.max || part.qPool.length === 0) return;
+            
+            currentEditingPart = part;
+            
+            // Get first question in queue
+            const qObj = part.qPool[0];
+            
+            // Setup Modal
+            document.getElementById('l2-modal-part-icon').innerText = part.icon;
+            document.getElementById('l2-modal-part-name').innerText = part.name;
+            document.getElementById('l2-q-text').innerText = qObj.q;
+            
+            const optionsContainer = document.getElementById('l2-q-options');
+            optionsContainer.innerHTML = '';
+            
+            qObj.opts.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'w-full text-left p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 focus:outline-none transition-colors duration-200 text-slate-300 font-medium active:scale-[0.98] flex items-start gap-3';
+                const prefix = String.fromCharCode(65 + idx);
+                btn.innerHTML = `<span class="font-bold text-sky-400 bg-slate-900 px-2 py-1 rounded shrink-0">${prefix}</span> <span>${opt}</span>`;
+                btn.onclick = () => submitAnswer(idx, qObj.ans);
+                optionsContainer.appendChild(btn);
+            });
+
+            // Start Timer (15s default)
+            timeLeft = 15;
+            updateTimerUI();
+            
+            clearInterval(questionTimer);
+            questionTimer = setInterval(() => {
+                timeLeft--;
+                updateTimerUI();
+                if (timeLeft <= 0) {
+                    submitAnswer(-1, qObj.ans); // Timeout
+                }
+            }, 1000);
+            
+            modalQ.classList.remove('hidden');
+            modalQ.classList.add('flex');
+        }
+
+        function updateTimerUI() {
+            const timerText = document.getElementById('l2-modal-timer-text');
+            const timerBar = document.getElementById('l2-modal-timer-bar');
+            
+            timerText.innerText = `${timeLeft}s`;
+            timerBar.style.width = `${(timeLeft / 15) * 100}%`;
+            
+            if (timeLeft <= 5) {
+                timerBar.classList.replace('bg-sky-400', 'bg-red-500');
+                timerText.classList.replace('text-sky-400', 'text-red-500');
+            } else {
+                timerBar.classList.replace('bg-red-500', 'bg-sky-400');
+                timerText.classList.replace('text-red-500', 'text-sky-400');
+            }
+        }
+
+        function closeModal() {
+            clearInterval(questionTimer);
+            modalQ.classList.add('hidden');
+            modalQ.classList.remove('flex');
+            currentEditingPart = null;
+        }
+
+        function submitAnswer(selectedIdx, correctIdx) {
+            const activePart = currentEditingPart; // Lưu lại bộ phận đang sửa trước khi đóng modal
+            closeModal(); // Khi gọi hàm này currentEditingPart sẽ bị gán thành null
+            
+            const isCorrect = (selectedIdx === correctIdx);
+            
+            const currentQ = activePart.qPool.shift(); // Remove from front
+            
+            if (isCorrect) {
+                // Success
+                activePart.progress++;
+                totalRepaired++;
+                globalProgressEl.innerText = totalRepaired;
+                
+                // Show success effect on SVG
+                const el = document.getElementById(`part-${activePart.id}`);
+                if(el) {
+                    el.style.filter = 'drop-shadow(0 0 20px #34d399)';
+                    setTimeout(() => el.style.filter = '', 500);
+                }
+                
+                checkWin();
+            } else {
+                // Fail
+                hp--;
+                updateHP();
+                
+                // Penalty visual
+                document.getElementById('level2').classList.add('damage-shake');
+                const shipContainer = document.getElementById('l2-ship-container');
+                shipContainer.style.filter = 'sepia(1) hue-rotate(-50deg) saturate(3)'; // Flash red
+                
+                setTimeout(() => {
+                    document.getElementById('level2').classList.remove('damage-shake');
+                    shipContainer.style.filter = '';
+                }, 400);
+
+                // Put question back to queue
+                activePart.qPool.push(currentQ);
+            }
+            
+            renderPanel();
+            updateSVGVisuals();
+        }
+
+        function checkWin() {
+            if (totalRepaired >= 50) {
+                endGame(true);
+            }
+        }
+
+        function fmtTime(sec) {
+            const t = Math.round(sec);
+            return String(Math.floor(t / 60)).padStart(2, '0') + ':' + String(t % 60).padStart(2, '0');
+        }
+
+        function showResult() {
+            const el = document.getElementById('l2-stats');
+            const t2 = skipped2 ? null : (Date.now() - startTime) / 1000;
+            const t1 = level1Skipped ? null : level1Time;
+            const row = (label, t) => `<div class="l2-stat-row"><span>${label}</span>${t == null ? '<b class="skipped">Đã bỏ qua</b>' : `<b>${fmtTime(t)}</b>`}</div>`;
+            let html = row('Màn 1 · Bảo vệ căn cứ', t1) + row('Màn 2 · Sửa chữa phi thuyền', t2);
+            if (t1 != null && t2 != null) {
+                const total = Math.round(t1 + t2);
+                html += `<div class="l2-stat-row l2-stat-total"><span>Tổng thời gian</span><b>${fmtTime(total)}</b></div>`;
+                let best = null;
+                try { const v = parseInt(localStorage.getItem('khtn8-best-time'), 10); if (v > 0) best = v; } catch (e) {}
+                if (best === null || total < best) {
+                    try { localStorage.setItem('khtn8-best-time', String(total)); } catch (e) {}
+                    html += `<div class="l2-record is-new">🏆 Kỷ lục mới${best === null ? '' : ` (trước đó ${fmtTime(best)})`}</div>`;
+                } else {
+                    html += `<div class="l2-record">Kỷ lục trên thiết bị này: ${fmtTime(best)}</div>`;
+                }
+            } else {
+                html += '<div class="l2-record">Có màn được bỏ qua nên không tính thành tích.</div>';
+            }
+            el.innerHTML = html;
+            el.hidden = false;
+        }
+
+        function endGame(isWin) {
+            modalEnd.classList.remove('hidden');
+            modalEnd.classList.add('flex');
+            
+            const box = document.getElementById('l2-end-box');
+            const icon = document.getElementById('l2-end-icon');
+            const title = document.getElementById('l2-end-title');
+            const desc = document.getElementById('l2-end-desc');
+
+            if (isWin) {
+                box.className = 'bg-slate-900 border-2 border-emerald-500 rounded-3xl p-8 w-full max-w-sm shadow-[0_0_40px_rgba(16,185,129,0.3)] modal-enter relative overflow-hidden';
+                icon.innerText = '🛸';
+                title.innerText = 'Đã Khôi Phục!';
+                title.className = 'text-3xl font-black mb-2 text-emerald-400 relative z-10';
+                desc.innerText = `Xuất sắc! Bạn đã hoàn thành cả hai màn. Tất cả 5 bộ phận đã hoạt động 100%.`;
+                showResult();
+            } else {
+                box.className = 'bg-slate-900 border-2 border-red-500 rounded-3xl p-8 w-full max-w-sm shadow-[0_0_40px_rgba(239,68,68,0.3)] modal-enter relative overflow-hidden';
+                icon.innerText = '💥';
+                title.innerText = 'Mất Điện Toàn Tập';
+                title.className = 'text-3xl font-black mb-2 text-red-500 relative z-10';
+                desc.innerText = `Tàu đã cạn kiệt năng lượng! Bạn sửa được ${totalRepaired}/50 lõi.`;
+                document.getElementById('l2-stats').hidden = true;
+            }
+        }
+
+        // Support keyboard 1-4 for answers
+        document.addEventListener('keydown', (e) => {
+            if (!modalQ.classList.contains('hidden')) {
+                if (['1', '2', '3', '4'].includes(e.key)) {
+                    const idx = parseInt(e.key) - 1;
+                    const options = document.getElementById('l2-q-options').children;
+                    if(options[idx]) options[idx].click();
+                }
+            }
+        });
+
+    
+        function skipLevel() {
+            skipped2 = true;
+            closeModal();
+            partsData.forEach(p => { p.progress = p.max; });
+            totalRepaired = 50;
+            globalProgressEl.innerText = totalRepaired;
+            renderPanel();
+            updateSVGVisuals();
+            endGame(true);
+        }
+        window.level2 = { init: initGame, selectPart: selectPart, closeModal: closeModal, skip: skipLevel };
+})();
+    </script>
+
+</body>
+</html>
